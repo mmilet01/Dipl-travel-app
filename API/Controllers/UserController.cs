@@ -83,5 +83,21 @@ namespace API.Controllers
 
             return Ok(user);
         }
+
+        [HttpGet("notification/{id}")]
+        public IActionResult GetSingleUserNotification([FromRoute] int id)
+        {
+            var userNotifications = _unitOfWork.NotificationRepository.GetByID(id);
+
+            return Ok(userNotifications);
+        }
+
+        [HttpGet("notifications/{id}")]
+        public IActionResult GetUserNotifications([FromRoute] int id)
+        {
+            var userNotifications = _unitOfWork.NotificationRepository.GetByPredicateList(x => x.ToId == id);
+
+            return Ok(userNotifications);
+        }
     }
 }

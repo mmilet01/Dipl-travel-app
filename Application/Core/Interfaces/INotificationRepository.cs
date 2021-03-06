@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Persistance;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Core.Interfaces
 {
-    public interface INotificationRepository
+    public interface INotificationRepository : IGenericRepository<Notifications>
     {
     }
 }

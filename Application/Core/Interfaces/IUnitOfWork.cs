@@ -11,6 +11,7 @@ namespace Core.Interfaces
         IUserRepository UserRepository { get; }
         IMessagingRepository MessagingRepository { get; }
         IFriendsRepository FriendsRepository { get; }
+        INotificationRepository NotificationRepository { get; }
         void SaveChanges();
     }
 }

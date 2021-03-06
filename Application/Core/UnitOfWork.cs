@@ -65,6 +65,19 @@ namespace Core
             }
         }
 
+        private INotificationRepository notificationRepository;
+        public INotificationRepository NotificationRepository
+        {
+            get
+            {
+                if (notificationRepository == null)
+                {
+                    notificationRepository = new NotificationRepository(_context);
+                }
+                return notificationRepository;
+            }
+        }
+
         public void SaveChanges()
         {
             _context.SaveChanges();
