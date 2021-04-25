@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using API.Errors;
 using AutoMapper;
 using Core.DTOs;
 using Core.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Persistance;
 
@@ -96,8 +93,8 @@ namespace API.Controllers
         public IActionResult GetUserNotifications([FromRoute] int id)
         {
             var userNotifications = _unitOfWork.NotificationRepository.GetByPredicateList(x => x.ToId == id);
-
             return Ok(userNotifications);
+
         }
     }
 }
